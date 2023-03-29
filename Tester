@@ -1,0 +1,23 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("qwerty hub", "GrapeTheme")
+
+-- Main
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Auto farms")
+
+
+MainSection:NewToggle("Auto-Click", "Clicks for you", function(state)
+    if state then
+        while true do
+            wait(0.001)
+            game:GetService("ReplicatedStorage").Packages.Knit.Services.ClickService.RF.Click:InvokeServer()
+            end
+        print("Toggle On")
+    else
+        while true do
+            wait()
+            game:GetService("ReplicatedStorage").Packages.Knit.Services.ClickService.RF.Click:InvokeServer()
+            end
+        print("Toggle Off")
+    end
+end)
