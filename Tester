@@ -15,7 +15,7 @@ MainSection:NewToggle("Auto-Click", "Clicks for you", function(state)
         print("Toggle On")
     else
         while true do
-            wait()
+            wait(999999)
             game:GetService("ReplicatedStorage").Packages.Knit.Services.ClickService.RF.Click:InvokeServer()
             end
         print("Toggle Off")
